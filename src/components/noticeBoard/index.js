@@ -17,7 +17,7 @@ class NoticeBoard extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Picker selectedValue={this.state.language} style={styles.select} onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+        <Picker selectedValue={this.state.language} style={styles.select} onValueChange={(itemValue) => this.props.onChange(itemValue)}>
           <Picker.Item label="Notice Board" value="dashboard" />
           <Picker.Item label="Profile" value="profile" />
           <Picker.Item label="Inbox" value="inbox" />

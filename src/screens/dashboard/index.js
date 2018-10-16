@@ -36,6 +36,16 @@ class Dashboard extends React.Component {
     this.state = {
 
     }
+    this.onChangeBoard = this.onChangeBoard.bind(this);
+  }
+
+  onChangeBoard(val) {
+    if (val == 'profile') {
+      this.props.navigation.navigate('ProfileStack');
+    }
+    if (val == 'dashboard') {
+      this.props.navigation.navigate('DashboardStack');
+    }
   }
 
   render () {
@@ -48,7 +58,7 @@ class Dashboard extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard />
+              <NoticeBoard onChange={this.onChangeBoard} />
             </View>
             <View style={styles.newPostSection}>
               <NewPost />
