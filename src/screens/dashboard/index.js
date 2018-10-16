@@ -1,8 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+
+import Header from '../header';
+
+import NoticeBoard from '../../components/noticeBoard';
+import NewPost from '../../components/newPost';
 
 
 const { height, width } = Dimensions.get('window');
@@ -34,7 +41,20 @@ class Dashboard extends React.Component {
   render () {
 
     return (
-      <View style={styles.container}>
+      <View style={styles.window}>
+        <View style={styles.header}>
+          <Header />
+        </View>
+        <View style={styles.container}>
+          <ScrollView>
+            <View style={styles.notifySection}>
+              <NoticeBoard />
+            </View>
+            <View style={styles.newPostSection}>
+              <NewPost />
+            </View>
+          </ScrollView>
+        </View>
       </View>
     );
 
@@ -43,11 +63,28 @@ class Dashboard extends React.Component {
 
 
 const styles = StyleSheet.create({
-  container: {
+  window: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: '#edf2f6',
   },
+  header: {
+    height: 60,
+  },
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  notifySection: {
+    marginTop: 30,
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 15,
+  },
+  newPostSection: {
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 30,
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

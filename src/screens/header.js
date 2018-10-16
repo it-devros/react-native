@@ -35,6 +35,12 @@ class Header extends React.Component {
 
     return (
       <View style={styles.container}>
+        <View style={styles.column1}>
+          <Image style={styles.logoImage} source={require('../../assets/icons/logo.png')}></Image>
+        </View>
+        <View style={styles.column2}>
+          <Image style={styles.logoImage} source={require('../../assets/icons/menu.png')}></Image>
+        </View>
       </View>
     );
 
@@ -45,9 +51,27 @@ class Header extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderColor: 'gray',
+    backgroundColor: '#ffffff',
   },
+  column1: {
+    flex: 1,
+    padding: 10,
+    alignItems: 'flex-start',
+  },
+  column2: {
+    flex: 1,
+    padding: 10,
+    alignItems: 'flex-end',
+  },
+  logoImage: {
+    width: 40,
+    height: 40
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

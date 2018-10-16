@@ -10,6 +10,8 @@ import WelcomeNew from './src/screens/auth/welcomeNew';
 
 import Welcome from './src/screens/welcome';
 
+import Dashboard from './src/screens/dashboard';
+
 
 const AuthStack = StackNavigator({
   Login: { screen: Login },
@@ -19,10 +21,16 @@ const AuthStack = StackNavigator({
   headerMode: 'none',
 });
 
+const DashboardStack = StackNavigator({
+  Dashboard: { screen: Dashboard }
+}, {
+  headerMode: 'none'
+});
 
 const AppNavigator = StackNavigator({
   Welcome: { screen: Welcome },
   AuthStack: { screen: AuthStack },
+  DashboardStack: { screen: DashboardStack },
 }, {
     mode: 'modal',
     headerMode: 'none',
