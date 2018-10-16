@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -10,6 +9,7 @@ import Header from '../header';
 
 import NoticeBoard from '../../components/noticeBoard';
 import NewPost from '../../components/newPost';
+import Post from '../../components/post';
 
 
 const { height, width } = Dimensions.get('window');
@@ -53,6 +53,19 @@ class Dashboard extends React.Component {
             <View style={styles.newPostSection}>
               <NewPost />
             </View>
+            <View style={styles.configSection}>
+              <Text style={styles.caption1}>Filter posts by:</Text>
+              <Text style={styles.caption2}>Buildings</Text>
+              <Text style={styles.caption2}>Tenants</Text>
+              <Text style={styles.caption2}>Prospects</Text>
+              <Text style={styles.caption2}>All</Text>
+            </View>
+            <View style={styles.postSection}>
+              <Post />
+            </View>
+            <View style={styles.postSection}>
+              <Post />
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -64,13 +77,15 @@ class Dashboard extends React.Component {
 
 const styles = StyleSheet.create({
   window: {
-    flex: 1,
+    width: width,
+    height: height,
     backgroundColor: '#edf2f6',
   },
   header: {
-    height: 60,
+    height: 50,
   },
   container: {
+    height: height - 80,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -84,6 +99,27 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 30,
+  },
+  configSection: {
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 15,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  caption1: {
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
+  caption2: {
+    fontSize: 12,
+    marginLeft: 5,
+    marginRight: 5,
+  },
+  postSection: {
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 15,
   }
 });
 
