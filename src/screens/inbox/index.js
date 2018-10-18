@@ -7,12 +7,8 @@ import { connect } from 'react-redux';
 import Header from '../header';
 
 import NoticeBoard from '../../components/noticeBoard';
-import NewPost from '../../components/newPost';
-import Post from '../../components/post';
-import ProfileImage from '../../components/profileImage';
-import StatusBar from '../../components/profileStatusBar';
-import ProfileTab from '../../components/profileTab';
-
+import InboxMessage from '../../components/inboxMessage';
+import InboxNewMessage from '../../components/inboxNewMessage';
 
 
 const { height, width } = Dimensions.get('window');
@@ -33,7 +29,7 @@ const mapStateToProps = (state) => {
 
 
 
-class Profile extends React.Component {
+class Inbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,26 +62,11 @@ class Profile extends React.Component {
             <View style={styles.notifySection}>
               <NoticeBoard onChange={this.onChangeBoard} />
             </View>
-            <View style={styles.profileImageSection}>
-              <ProfileImage />
+            <View style={styles.messageSection}>
+              <InboxMessage />
             </View>
-            <View style={styles.statusSection}>
-              <StatusBar />
-            </View>
-            <View style={styles.tabSection}>
-              <ProfileTab title={ 'Welcome' } />
-            </View>
-            <View style={styles.tabSection}>
-              <ProfileTab title={ 'Friends' } />
-            </View>
-            <View style={styles.tabSection}>
-              <ProfileTab title={ 'Albums' } />
-            </View>
-            <View style={styles.overviewSection}>
-              <NewPost />
-            </View>
-            <View style={styles.overview1Section}>
-              <Post />
+            <View style={styles.newMessageSection}>
+              <InboxNewMessage />
             </View>
           </ScrollView>
         </View>
@@ -116,31 +97,16 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginBottom: 15,
   },
-  profileImageSection: {
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 15,
-  },
-  statusSection: {
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 30,
-  },
-  tabSection: {
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 30,
-  },
-  overviewSection: {
+  messageSection: {
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 2,
   },
-  overview1Section: {
+  newMessageSection: {
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 30,
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Inbox);

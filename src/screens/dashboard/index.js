@@ -46,6 +46,9 @@ class Dashboard extends React.Component {
     if (val == 'dashboard') {
       this.props.navigation.navigate('DashboardStack');
     }
+    if (val == 'inbox') {
+      this.props.navigation.navigate('InboxStack');
+    }
   }
 
   render () {

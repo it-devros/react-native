@@ -23,10 +23,20 @@ class ProfileImage extends React.Component {
           <Image style={styles.profileImage} source={require('../../../assets/avatars/default.png')}></Image>
           <Text style={styles.name}>Tester Tester</Text>
         </ImageBackground>
-        <View style={styles.flagSection}>
+        {/* <View style={styles.flagSection}>
           <Image style={styles.flagImage} source={require('../../../assets/icons/flag.png')}></Image>
+        </View> */}
+        <View style={styles.tabSection}>
+          <View style={styles.tabItem}>
+            <Text style={styles.tabText}>Profile</Text>
+          </View>          
+          <View style={styles.tabItem}>
+            <Text style={styles.tabText}>Friends</Text>
+          </View>
+          <View style={styles.tabItem}>
+            <Text style={styles.tabText}>Albums</Text>
+          </View>
         </View>
-        <View style={styles.tabSection}></View>
       </View>
     );
 
@@ -85,7 +95,17 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 30,
-    paddingBottom: 30
+    paddingBottom: 30,
+    flexDirection: 'row',
+  },
+  tabItem: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  tabText: {
+    fontSize: 16,
+    fontWeight: 'bold',
   }
 });
 
