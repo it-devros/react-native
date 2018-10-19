@@ -76,6 +76,9 @@ class Settings extends React.Component {
     if (val == 'settings') {
       this.props.navigation.navigate('SettingsStack');
     }
+    if (val == 'albums') {
+      this.props.navigation.navigate('AlbumsStack');
+    }
   }
 
   onPressTab(val) {
