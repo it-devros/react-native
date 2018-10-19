@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpa
 import Svg,{ Path } from 'react-native-svg';
 import { Button } from 'react-native-elements';
 
-import {RichTextEditor, RichTextToolbar} from 'react-native-zss-rich-text-editor';
-import {WebViewQuillEditor, WebViewQuillViewer} from 'react-native-webview-quilljs';
+// import {RichTextEditor, RichTextToolbar} from 'react-native-zss-rich-text-editor';
+// import {WebViewQuillEditor, WebViewQuillViewer} from 'react-native-webview-quilljs';
 
 const { height, width } = Dimensions.get('window');
 
@@ -36,17 +36,18 @@ class InboxNewMessage extends React.Component {
           <View style={styles.footer}>
             <TextInput style={styles.description} multiline={true} numberOfLines={3} editable = {true} placeholder={'Enter User Name.'} editable = {true} textAlignVertical={'top'}/>
             <View style={styles.ckeditorSection}>
+              <TextInput style={styles.description} multiline={true} numberOfLines={3} editable = {true} placeholder={''} editable = {true} textAlignVertical={'top'}/>
               {/* <RichTextToolbar />
               <RichTextEditor
                 initialTitleHTML={'Title!!'}
                 initialContentHTML={'Hello <b>World</b> <p>this is a new paragraph</p> <p>this is another new paragraph</p>'}
               /> */}
-              <WebViewQuillEditor
+              {/* <WebViewQuillEditor
                 ref={component => (this.webViewQuillEditor = component)}
               />
               <WebViewQuillViewer
                 ref={component => (this.webViewQuillViewer = component)}
-              />
+              /> */}
             </View>
             <View style={styles.buttonSection}>
               <Button buttonStyle={styles.sendButton} title={'Send'}/>
