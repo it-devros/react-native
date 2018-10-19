@@ -18,7 +18,7 @@ class NewPost extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.content}>
-          <Image style={styles.profileImage} source={require('../../../assets/avatars/default.png')}></Image>
+          <Image style={styles.profileImage} source={require('../../../../assets/avatars/default.png')}></Image>
           <TextInput style={styles.description} multiline={true} numberOfLines={5} editable = {true} placeholder={'Share a post , vacancy or new listing'} onChangeText={(text) => this.setState({text})} value={this.state.text} editable = {true} textAlignVertical={'top'}/>
         </View>
         <View style={styles.footer}>

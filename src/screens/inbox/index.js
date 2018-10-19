@@ -5,10 +5,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Header from '../header';
-
 import NoticeBoard from '../../components/noticeBoard';
-import InboxMessage from '../../components/inboxMessage';
-import InboxNewMessage from '../../components/inboxNewMessage';
+
+import InboxMessage from '../../components/inbox/inboxMessage';
+import InboxNewMessage from '../../components/inbox/inboxNewMessage';
 
 
 const { height, width } = Dimensions.get('window');
@@ -47,6 +47,9 @@ class Inbox extends React.Component {
     }
     if (val == 'inbox') {
       this.props.navigation.navigate('InboxStack');
+    }
+    if (val == 'settings') {
+      this.props.navigation.navigate('SettingsStack');
     }
   }
 

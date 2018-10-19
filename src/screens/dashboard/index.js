@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 
 
 import Header from '../header';
-
 import NoticeBoard from '../../components/noticeBoard';
-import NewPost from '../../components/newPost';
-import Post from '../../components/post';
+
+import NewPost from '../../components/dashboard/newPost';
+import Post from '../../components/dashboard/post';
 
 
 const { height, width } = Dimensions.get('window');
@@ -48,6 +48,9 @@ class Dashboard extends React.Component {
     }
     if (val == 'inbox') {
       this.props.navigation.navigate('InboxStack');
+    }
+    if (val == 'settings') {
+      this.props.navigation.navigate('SettingsStack');
     }
   }
 

@@ -19,8 +19,8 @@ class ProfileImage extends React.Component {
 
     return (
       <View style={styles.container}>
-        <ImageBackground style={styles.backgroundImage} source={require('../../../assets/images/default_header.png')}>
-          <Image style={styles.profileImage} source={require('../../../assets/avatars/default.png')}></Image>
+        <ImageBackground style={styles.backgroundImage} source={require('../../../../assets/images/default_header.png')}>
+          <Image style={styles.profileImage} source={require('../../../../assets/avatars/default.png')}></Image>
           <Text style={styles.name}>Tester Tester</Text>
         </ImageBackground>
         {/* <View style={styles.flagSection}>

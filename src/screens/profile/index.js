@@ -5,13 +5,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Header from '../header';
-
 import NoticeBoard from '../../components/noticeBoard';
-import NewPost from '../../components/newPost';
-import Post from '../../components/post';
-import ProfileImage from '../../components/profileImage';
-import StatusBar from '../../components/profileStatusBar';
-import ProfileTab from '../../components/profileTab';
+
+import NewPost from '../../components/profile/newPost';
+import Post from '../../components/profile/post';
+import ProfileImage from '../../components/profile/profileImage';
+import StatusBar from '../../components/profile/profileStatusBar';
+import ProfileTab from '../../components/profile/profileTab';
 
 
 
@@ -51,6 +51,9 @@ class Profile extends React.Component {
     }
     if (val == 'inbox') {
       this.props.navigation.navigate('InboxStack');
+    }
+    if (val == 'settings') {
+      this.props.navigation.navigate('SettingsStack');
     }
   }
 

@@ -16,6 +16,8 @@ import Profile from './src/screens/profile';
 
 import Inbox from './src/screens/inbox';
 
+import Settings from './src/screens/settings';
+
 
 const AuthStack = StackNavigator({
   Login: { screen: Login },
@@ -43,12 +45,19 @@ const InboxStack = StackNavigator({
   headerMode: 'none'
 });
 
+const SettingsStack = StackNavigator({
+  Settings: { screen: Settings }
+}, {
+  headerMode: 'none'
+});
+
 const AppNavigator = StackNavigator({
   Welcome: { screen: Welcome },
   AuthStack: { screen: AuthStack },
   DashboardStack: { screen: DashboardStack },
   ProfileStack: { screen: ProfileStack },
   InboxStack: { screen: InboxStack },
+  SettingsStack: { screen: SettingsStack }
 }, {
     mode: 'modal',
     headerMode: 'none',

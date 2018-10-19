@@ -18,11 +18,11 @@ class Post extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Image style={styles.profileImage} source={require('../../../assets/avatars/default.png')}></Image>
+          <Image style={styles.profileImage} source={require('../../../../assets/avatars/default.png')}></Image>
           <View style={styles.headerSection}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Text style={styles.title}>210 BOWERY</Text>
-              <Image style={styles.verifiedImage} source={require('../../../assets/icons/verified_badge.png')}></Image>
+              <Image style={styles.verifiedImage} source={require('../../../../assets/icons/verified_badge.png')}></Image>
               <Text style={styles.caption1}>Posted an</Text>
               <Text style={styles.caption2}>Update</Text>
             </View>
@@ -40,7 +40,7 @@ class Post extends React.Component {
           </Text>
           <Text style={styles.bodyTime}>10/16 , 02:52pm</Text>
           <View style={styles.album}>
-            <Image style={styles.albumImage} source={require('../../../assets/images/temp.jpg')}></Image>
+            <Image style={styles.albumImage} source={require('../../../../assets/images/temp.jpg')}></Image>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Text style={styles.caption1}>Added to album</Text>
