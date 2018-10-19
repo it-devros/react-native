@@ -17,7 +17,7 @@ class NoticeBoard extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Picker selectedValue={this.state.language} style={styles.select} onValueChange={(itemValue) => this.props.onChange(itemValue)}>
+        <Picker style={styles.select} onValueChange={(itemValue) => this.props.onChange(itemValue)}>
           <Picker.Item label="Notice Board" value="dashboard" />
           <Picker.Item label="Profile" value="profile" />
           <Picker.Item label="Inbox" value="inbox" />
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
   },
   select: {
     width: width - 30,
-    height: 50,
     backgroundColor: '#ffffff',
     borderWidth: 1,
     borderColor: '#000',

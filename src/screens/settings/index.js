@@ -11,6 +11,12 @@ import NoticeBoard from '../../components/noticeBoard';
 
 import SettingsTab from '../../components/settings/settingsTab';
 import SettingsWindow from '../../components/settings/settings';
+import ChangePassword from '../../components/settings/changePassword';
+import PrivacySettings from '../../components/settings/privacySettings';
+import SocialNetworks from '../../components/settings/socialNetworks';
+import FriendRequests from '../../components/settings/friendRequests';
+import BuildingInvites from '../../components/settings/buildingInvites';
+import BecomeVerified from '../../components/settings/becomeVerified';
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -77,6 +83,24 @@ class Settings extends React.Component {
     if (val == 'settings') {
       this.setState({ is_settings: true });
     }
+    if (val == 'changePassword') {
+      this.setState({ is_changePassword: true });
+    }
+    if (val == 'privacySettings') {
+      this.setState({ is_privacySettings: true });
+    }
+    if (val == 'socialNetworks') {
+      this.setState({ is_socialNetworks: true });
+    }
+    if (val == 'friendRequests') {
+      this.setState({ is_friendRequests: true });
+    }
+    if (val == 'buildingInvites') {
+      this.setState({ is_buildingInvites: true });
+    }
+    if (val == 'becomeVerified') {
+      this.setState({ is_becomeVerified: true });
+    }
   }
 
 
@@ -100,6 +124,41 @@ class Settings extends React.Component {
                 this.state.is_settings == true ?
                   <SettingsWindow />
                 : null
+              }
+              {
+                this.state.is_changePassword == true ?
+                  <ChangePassword />
+                : null
+              }
+              {
+                this.state.is_privacySettings == true ?
+                  <PrivacySettings />
+                :
+                  null
+              }
+              {
+                this.state.is_socialNetworks == true ?
+                  <SocialNetworks />
+                :
+                  null
+              }
+              {
+                this.state.is_friendRequests == true ?
+                  <FriendRequests />
+                :
+                  null
+              }
+              {
+                this.state.is_buildingInvites == true ?
+                  <BuildingInvites />
+                :
+                  null
+              }
+              {
+                this.state.is_becomeVerified == true ?
+                  <BecomeVerified />
+                :
+                  null
               }
             </View>
           </ScrollView>
