@@ -5,18 +5,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as commonActions from '../../actions/common';
+import * as userActions from '../../actions/user';
 
 import Header from '../header';
 import NoticeBoard from '../../components/noticeBoard';
 
-import NewPost from '../../components/dashboard/newPost';
-import Post from '../../components/dashboard/post';
+import NewPost from '../../components/savedPosts/newPost';
+import Post from '../../components/savedPosts/post';
 
 
 const { height, width } = Dimensions.get('window');
 
+
 const mapDispatchToProps = (dispatch) => {
 	return ({
+    userActions: bindActionCreators({...userActions}, dispatch),
     commonActions: bindActionCreators({...commonActions}, dispatch)
 	});
 }
@@ -31,8 +34,7 @@ const mapStateToProps = (state) => {
 
 
 
-
-class Dashboard extends React.Component {
+class SavedPosts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -80,7 +82,7 @@ class Dashboard extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'dashboard'} onChange={this.onChangeBoard} />
+              <NoticeBoard value={'savedPosts'} onChange={this.onChangeBoard} />
             </View>
             <View style={styles.newPostSection}>
               <NewPost />
@@ -92,12 +94,12 @@ class Dashboard extends React.Component {
               <Text style={styles.caption2}>Prospects</Text>
               <Text style={styles.caption2}>All</Text>
             </View>
-            <View style={styles.postSection}>
+            {/* <View style={styles.postSection}>
               <Post />
             </View>
             <View style={styles.postSection}>
               <Post />
-            </View>
+            </View> */}
           </ScrollView>
         </View>
       </View>
@@ -155,4 +157,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(SavedPosts);

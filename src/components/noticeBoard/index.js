@@ -17,7 +17,7 @@ class NoticeBoard extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Picker style={styles.select} onValueChange={(itemValue) => this.props.onChange(itemValue)}>
+        <Picker style={styles.select} selectedValue={this.props.value} onValueChange={(itemValue) => this.props.onChange(itemValue)}>
           <Picker.Item label="Notice Board" value="dashboard" />
           <Picker.Item label="Profile" value="profile" />
           <Picker.Item label="Inbox" value="inbox" />

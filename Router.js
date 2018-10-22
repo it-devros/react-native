@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { StackNavigator } from 'react-navigation';
 
+import Menu from './src/screens/menu';
 
 import Login from './src/screens/auth/login';
 import SignUp from './src/screens/auth/signup';
@@ -19,6 +20,10 @@ import Inbox from './src/screens/inbox';
 import Settings from './src/screens/settings';
 
 import Albums from './src/screens/albums';
+
+import Buildings from './src/screens/buildings';
+
+import SavedPosts from './src/screens/savedPosts';
 
 
 const AuthStack = StackNavigator({
@@ -59,6 +64,18 @@ const AlbumsStack = StackNavigator({
   headerMode: 'none'
 });
 
+const BuildingsStack = StackNavigator({
+  Buildings: { screen: Buildings }
+}, {
+  headerMode: 'none'
+});
+
+const SavedPostsStack = StackNavigator({
+  SavedPosts: { screen: SavedPosts }
+}, {
+  headerMode: 'none'
+});
+
 const AppNavigator = StackNavigator({
   Welcome: { screen: Welcome },
   AuthStack: { screen: AuthStack },
@@ -66,7 +83,11 @@ const AppNavigator = StackNavigator({
   ProfileStack: { screen: ProfileStack },
   InboxStack: { screen: InboxStack },
   SettingsStack: { screen: SettingsStack },
-  AlbumsStack: { screen: AlbumsStack }
+  AlbumsStack: { screen: AlbumsStack },
+  BuildingsStack: { screen: BuildingsStack },
+  SavedPostsStack: { screen: SavedPostsStack },
+
+  Menu: { screen: Menu }
 }, {
     mode: 'modal',
     headerMode: 'none',

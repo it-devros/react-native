@@ -3,7 +3,7 @@ import { COMMON } from '../config/types';
 
 const initState = {
   loading: false,
-  label: ''
+  label: '',
 }
 
 
@@ -26,7 +26,7 @@ const common = (state = initState, action) => {
       }
 
     default:
-        return state;
+      return state;
   }
 };
 

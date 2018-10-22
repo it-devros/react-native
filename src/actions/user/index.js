@@ -1,4 +1,3 @@
-import firebase from 'react-native-firebase';
 import { AsyncStorage } from 'react-native';
 import { USER, COMMON } from '../../config/types';
 

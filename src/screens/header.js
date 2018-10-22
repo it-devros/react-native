@@ -4,23 +4,7 @@ import { Button } from 'react-native-elements';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-
 const { height, width } = Dimensions.get('window');
-
-
-const mapDispatchToProps = (dispatch) => {
-	return ({
-	});
-}
-
-const mapStateToProps = (state) => {
-	return ({
-    authedUser: state.user.authedUser,
-    loading: state.common.loading,
-    label: state.common.label,
-	});
-}
-
 
 
 class Header extends React.Component {
@@ -39,7 +23,14 @@ class Header extends React.Component {
           <Image style={styles.logoImage} source={require('../../assets/icons/logo.png')}></Image>
         </View>
         <View style={styles.column2}>
-          <Image style={styles.logoImage} source={require('../../assets/icons/menu.png')}></Image>
+          <TouchableOpacity onPress={this.props.onPressMenu}>
+            {
+              this.props.opened == false ?
+                <Image style={styles.logoImage} source={require('../../assets/icons/menu.png')}></Image>
+              :
+                <Image style={styles.closeImage} source={require('../../assets/icons/close.png')}></Image>
+            }
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -71,7 +62,11 @@ const styles = StyleSheet.create({
   logoImage: {
     width: 30,
     height: 30
+  },
+  closeImage: {
+    width: 20,
+    height: 20
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;

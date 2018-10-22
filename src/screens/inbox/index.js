@@ -35,7 +35,12 @@ class Inbox extends React.Component {
     this.state = {
 
     }
+    this.onPressMenu = this.onPressMenu.bind(this);
     this.onChangeBoard = this.onChangeBoard.bind(this);
+  }
+
+  onPressMenu() {
+    this.props.navigation.navigate('Menu');
   }
 
   onChangeBoard(val) {
@@ -54,6 +59,12 @@ class Inbox extends React.Component {
     if (val == 'albums') {
       this.props.navigation.navigate('AlbumsStack');
     }
+    if (val == 'buildings') {
+      this.props.navigation.navigate('BuildingsStack');
+    }
+    if (val == 'savedPosts') {
+      this.props.navigation.navigate('SavedPostsStack');
+    }
   }
 
   render () {
@@ -61,12 +72,12 @@ class Inbox extends React.Component {
     return (
       <View style={styles.window}>
         <View style={styles.header}>
-          <Header />
+          <Header opened={false} onPressMenu={this.onPressMenu} />
         </View>
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard onChange={this.onChangeBoard} />
+              <NoticeBoard value={'inbox'} onChange={this.onChangeBoard} />
             </View>
             <View style={styles.messageSection}>
               <InboxMessage />

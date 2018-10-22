@@ -46,6 +46,7 @@ class Settings extends React.Component {
       is_buildingInvites: false,
       is_becomeVerified: false,
     }
+    this.onPressMenu = this.onPressMenu.bind(this);
     this.onChangeBoard = this.onChangeBoard.bind(this);
     this.onPressTab = this.onPressTab.bind(this);
     this.initStates = this.initStates.bind(this);
@@ -63,6 +64,10 @@ class Settings extends React.Component {
     });
   }
 
+  onPressMenu() {
+    this.props.navigation.navigate('Menu');
+  }
+
   onChangeBoard(val) {
     if (val == 'profile') {
       this.props.navigation.navigate('ProfileStack');
@@ -78,6 +83,12 @@ class Settings extends React.Component {
     }
     if (val == 'albums') {
       this.props.navigation.navigate('AlbumsStack');
+    }
+    if (val == 'buildings') {
+      this.props.navigation.navigate('BuildingsStack');
+    }
+    if (val == 'savedPosts') {
+      this.props.navigation.navigate('SavedPostsStack');
     }
   }
 
@@ -112,12 +123,12 @@ class Settings extends React.Component {
     return (
       <View style={styles.window}>
         <View style={styles.header}>
-          <Header />
+          <Header opened={false} onPressMenu={this.onPressMenu} />
         </View>
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard onChange={this.onChangeBoard} />
+              <NoticeBoard value={'settings'} onChange={this.onChangeBoard} />
             </View>
             <View style={styles.subTabSection}>
               <SettingsTab onPressTab={this.onPressTab} />
