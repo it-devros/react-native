@@ -7,9 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "buffer": "^5.2.1",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.3",
     "react-native-elements": "^0.19.1",
+    "react-native-image-crop-picker": "^0.21.2",
     "react-native-splash-screen": "^3.1.1",
     "react-native-storage": "^0.2.3",
     "react-native-svg": "^7.1.2",

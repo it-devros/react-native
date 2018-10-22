@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native';
 import Svg,{ Path } from 'react-native-svg';
 import { Button } from 'react-native-elements';
-
+import ImagePicker from 'react-native-image-crop-picker';
 
 const { height, width } = Dimensions.get('window');
 
@@ -11,16 +11,39 @@ class ProfileImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
+      image: '',
     }
+    this.onPressProfileImage = this.onPressProfileImage.bind(this);
+  }
+
+  onPressProfileImage() {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      includeBase64: true,
+      cropping: true
+    }).then(image => {
+      console.log(image);
+      this.setState({ image: image });
+    });
   }
 
   render () {
 
+    image = this.state.image;
+
     return (
       <View style={styles.container}>
         <ImageBackground style={styles.backgroundImage} source={require('../../../../assets/images/default_header.png')}>
-          <Image style={styles.profileImage} source={require('../../../../assets/avatars/default.png')}></Image>
+          <TouchableOpacity onPress={() => this.onPressProfileImage()}>
+            {
+              this.state.image == '' ?
+                <Image style={styles.profileImage} source={require('../../../../assets/avatars/default.png')}></Image>
+              :
+                <Image style={styles.profileImage} source={{ uri: 'data:image/jpeg;base64,' + this.state.image.data }}></Image>
+            }
+          </TouchableOpacity>
           <Text style={styles.name}>Tester Tester</Text>
         </ImageBackground>
         {/* <View style={styles.flagSection}>

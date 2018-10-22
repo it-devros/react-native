@@ -4,6 +4,7 @@ import Svg,{ Path } from 'react-native-svg';
 import { Button } from 'react-native-elements';
 
 
+
 const { height, width } = Dimensions.get('window');
 
 
@@ -11,8 +12,9 @@ class ProfileImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
     }
+    
   }
 
   render () {
