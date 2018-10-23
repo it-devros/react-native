@@ -1,9 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 import Menu from './src/screens/menu';
+import SideMenu from './src/screens/sideMenu';
 
 import Login from './src/screens/auth/login';
 import SignUp from './src/screens/auth/signup';
@@ -26,68 +27,43 @@ import Buildings from './src/screens/buildings';
 import SavedPosts from './src/screens/savedPosts';
 
 
-const AuthStack = StackNavigator({
+
+const WelcomeStack = {
+  Welcome: { screen: Welcome }
+};
+
+const AuthStack = {
   Login: { screen: Login },
   SignUp: { screen: SignUp },
   WelcomeNew: { screen: WelcomeNew }
-}, {
-  headerMode: 'none',
-});
+};
 
-const DashboardStack = StackNavigator({
-  Dashboard: { screen: Dashboard }
-}, {
-  headerMode: 'none'
-});
 
-const ProfileStack = StackNavigator({
-  Profile: { screen: Profile }
-}, {
-  headerMode: 'none'
-});
-
-const InboxStack = StackNavigator({
-  Inbox: { screen: Inbox }
-}, {
-  headerMode: 'none'
-});
-
-const SettingsStack = StackNavigator({
-  Settings: { screen: Settings }
-}, {
-  headerMode: 'none'
-});
-
-const AlbumsStack = StackNavigator({
-  Albums: { screen: Albums }
-}, {
-  headerMode: 'none'
-});
-
-const BuildingsStack = StackNavigator({
-  Buildings: { screen: Buildings }
-}, {
-  headerMode: 'none'
-});
-
-const SavedPostsStack = StackNavigator({
-  SavedPosts: { screen: SavedPosts }
-}, {
-  headerMode: 'none'
-});
-
-const AppNavigator = StackNavigator({
-  Welcome: { screen: Welcome },
-  AuthStack: { screen: AuthStack },
-  DashboardStack: { screen: DashboardStack },
-  ProfileStack: { screen: ProfileStack },
-  InboxStack: { screen: InboxStack },
-  SettingsStack: { screen: SettingsStack },
-  AlbumsStack: { screen: AlbumsStack },
-  BuildingsStack: { screen: BuildingsStack },
-  SavedPostsStack: { screen: SavedPostsStack },
+const MainStack = {
+  Dashboard: { screen: Dashboard },
+  Profile: { screen: Profile },
+  Inbox: { screen: Inbox },
+  Settings: { screen: Settings },
+  Albums: { screen: Albums },
+  Buildings: { screen: Buildings },
+  SavedPosts: { screen: SavedPosts },
 
   Menu: { screen: Menu }
+};
+
+
+const DrawerStack = createDrawerNavigator(MainStack, {
+  drawerWidth: 300,
+  contentComponent: SideMenu,
+})
+
+const AppNavigator = createStackNavigator({
+  ...WelcomeStack,
+  ...AuthStack,
+  Drawer: {
+    name: 'Drawer',
+    screen: DrawerStack,
+  },
 }, {
     mode: 'modal',
     headerMode: 'none',

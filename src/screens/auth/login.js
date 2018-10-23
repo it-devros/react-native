@@ -38,7 +38,7 @@ class Login extends React.Component {
   }
 
   doLogIn() {
-    this.props.navigation.navigate('DashboardStack');
+    this.props.navigation.navigate('Dashboard');
   }
 
   render () {

@@ -40,6 +40,7 @@ class Profile extends React.Component {
 
     }
     this.onPressMenu = this.onPressMenu.bind(this);
+    this.onPressHome = this.onPressHome.bind(this);
     this.onChangeBoard = this.onChangeBoard.bind(this);
   }
 
@@ -47,28 +48,32 @@ class Profile extends React.Component {
     this.props.navigation.navigate('Menu');
   }
 
+  onPressHome() {
+    this.props.navigation.openDrawer();
+  }
+
 
   onChangeBoard(val) {
     if (val == 'profile') {
-      this.props.navigation.navigate('ProfileStack');
+      this.props.navigation.navigate('Profile');
     }
     if (val == 'dashboard') {
-      this.props.navigation.navigate('DashboardStack');
+      this.props.navigation.navigate('Dashboard');
     }
     if (val == 'inbox') {
-      this.props.navigation.navigate('InboxStack');
+      this.props.navigation.navigate('Inbox');
     }
     if (val == 'settings') {
-      this.props.navigation.navigate('SettingsStack');
+      this.props.navigation.navigate('Settings');
     }
     if (val == 'albums') {
-      this.props.navigation.navigate('AlbumsStack');
+      this.props.navigation.navigate('Albums');
     }
     if (val == 'buildings') {
-      this.props.navigation.navigate('BuildingsStack');
+      this.props.navigation.navigate('Buildings');
     }
     if (val == 'savedPosts') {
-      this.props.navigation.navigate('SavedPostsStack');
+      this.props.navigation.navigate('SavedPosts');
     }
   }
 
@@ -77,7 +82,7 @@ class Profile extends React.Component {
     return (
       <View style={styles.window}>
         <View style={styles.header}>
-          <Header opened={false} onPressMenu={this.onPressMenu} />
+          <Header opened={false} onPressHome={this.onPressHome} onPressMenu={this.onPressMenu} />
         </View>
         <View style={styles.container}>
           <ScrollView>

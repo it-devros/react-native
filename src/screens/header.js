@@ -20,7 +20,9 @@ class Header extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.column1}>
-          <Image style={styles.logoImage} source={require('../../assets/icons/logo.png')}></Image>
+          <TouchableOpacity onPress={this.props.onPressHome}>
+            <Image style={styles.logoImage} source={require('../../assets/icons/logo.png')}></Image>
+          </TouchableOpacity>
         </View>
         <View style={styles.column2}>
           <TouchableOpacity onPress={this.props.onPressMenu}>
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomWidth: 1,
     borderColor: 'gray',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f7f7f7',
   },
   column1: {
     flex: 1,

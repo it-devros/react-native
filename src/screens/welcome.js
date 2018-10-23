@@ -33,7 +33,7 @@ class Welcome extends React.Component {
   }
 
   onPressLoginBtn() {
-    this.props.navigation.navigate('AuthStack');
+    this.props.navigation.navigate('Login');
   }
 
   render () {
