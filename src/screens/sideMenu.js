@@ -59,6 +59,9 @@ class SideMenu extends React.Component {
     if (val == 'savedPosts') {
       this.props.navigation.navigate('SavedPosts');
     }
+    if (val == 'funds') {
+      this.props.navigation.navigate('Funds');
+    }
   }
 
 
@@ -149,7 +152,7 @@ class SideMenu extends React.Component {
             </View>
           </TouchableOpacity>
           
-          <TouchableOpacity onPress={() => this.onPressItem('collapse')}>
+          <TouchableOpacity onPress={() => this.onPressItem('funds')}>
             <View style={styles.item}>
               <Svg viewBox="0 0 35 32" width={20} height={20}>
                 <Path fill="#9a9fbf" d="M32 22.4h-28.8v-19.2h32c0-1.766-1.434-3.2-3.2-3.2h-28.8c-1.766 0-3.2 1.432-3.2 3.2v19.2c0 1.766 1.434 3.202 3.2 3.202h9.6v3.198h-4.8v3.2h19.2v-3.2h-4.8v-3.198h9.6c1.766 0 3.2-1.434 3.2-3.202v-9.598h-3.2v9.598zM19.2 28.8h-3.2v-3.198h3.2v3.198zM32 9.6h3.2v-3.198h-3.2v3.198zM12.8 14.402v-3.2h-3.2v3.2h3.2zM19.2 14.402v-3.2h-3.2v3.2h3.2zM25.6 14.402v-3.2h-3.2v3.2h3.2z"></Path>

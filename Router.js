@@ -26,6 +26,8 @@ import Buildings from './src/screens/buildings';
 
 import SavedPosts from './src/screens/savedPosts';
 
+import Funds from './src/screens/funds';
+
 
 
 const WelcomeStack = {
@@ -47,15 +49,16 @@ const MainStack = {
   Albums: { screen: Albums },
   Buildings: { screen: Buildings },
   SavedPosts: { screen: SavedPosts },
+  Funds: { screen: Funds },
 
   Menu: { screen: Menu }
 };
-
 
 const DrawerStack = createDrawerNavigator(MainStack, {
   drawerWidth: 300,
   contentComponent: SideMenu,
 })
+
 
 const AppNavigator = createStackNavigator({
   ...WelcomeStack,
@@ -64,6 +67,7 @@ const AppNavigator = createStackNavigator({
     name: 'Drawer',
     screen: DrawerStack,
   },
+
 }, {
     mode: 'modal',
     headerMode: 'none',
