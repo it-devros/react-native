@@ -5,6 +5,7 @@ import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 import Menu from './src/screens/menu';
 import SideMenu from './src/screens/sideMenu';
+import SideBar from './src/screens/sidebar';
 
 import Login from './src/screens/auth/login';
 import SignUp from './src/screens/auth/signup';
@@ -51,14 +52,15 @@ const MainStack = {
   SavedPosts: { screen: SavedPosts },
   Funds: { screen: Funds },
 
+  SideBar: { screen: SideBar },
   Menu: { screen: Menu }
 };
 
+
 const DrawerStack = createDrawerNavigator(MainStack, {
   drawerWidth: 300,
-  contentComponent: SideMenu,
-})
-
+  contentComponent: SideMenu
+});
 
 const AppNavigator = createStackNavigator({
   ...WelcomeStack,
@@ -67,7 +69,6 @@ const AppNavigator = createStackNavigator({
     name: 'Drawer',
     screen: DrawerStack,
   },
-
 }, {
     mode: 'modal',
     headerMode: 'none',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Button } from 'react-native-elements';
+import Svg,{ Path } from 'react-native-svg';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -41,6 +42,7 @@ class Dashboard extends React.Component {
     this.onPressMenu = this.onPressMenu.bind(this);
     this.onPressHome = this.onPressHome.bind(this);
     this.onChangeBoard = this.onChangeBoard.bind(this);
+    this.onPressSideBar = this.onPressSideBar.bind(this);
   }
 
   onPressMenu() {
@@ -49,6 +51,10 @@ class Dashboard extends React.Component {
 
   onPressHome() {
     this.props.navigation.openDrawer();
+  }
+
+  onPressSideBar() {
+    this.props.navigation.navigate('SideBar');
   }
 
   onChangeBoard(val) {
@@ -104,6 +110,13 @@ class Dashboard extends React.Component {
               <Post />
             </View>
           </ScrollView>
+          <View style={styles.sidebarBtn}>
+            <TouchableOpacity onPress={this.onPressSideBar}>
+              <Svg id="olymp-menu-icon" viewBox="0 0 41 32" width={30} height={30}>
+                <Path fill="#ffffff" d="M4.571 0h-4.571v4.571h4.571v-4.571zM9.143 0v4.571h32v-4.571h-32zM13.714 13.714h-13.714v4.571h13.714v-4.571zM18.286 13.714v4.571h4.571v-4.571h-4.571zM27.429 18.286h13.714v-4.571h-13.714v4.571zM0 32h32v-4.569h-32v4.569zM36.571 32h4.571v-4.569h-4.571v4.569z"></Path>
+              </Svg>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -157,6 +170,17 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 15,
+  },
+  sidebarBtn: {
+    width: 50,
+    height: 50,
+    borderRadius: 5,
+    backgroundColor: '#ff5e3a',
+    position: 'absolute',
+    right: 0,
+    top: 200,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 

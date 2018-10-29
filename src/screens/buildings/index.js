@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import Header from '../header';
 import NoticeBoard from '../../components/noticeBoard';
 
+import SearchBox from '../../components/buildings/searchBox';
+import Building from '../../components/buildings/building';
 import Error from '../error';
 
 const { height, width } = Dimensions.get('window');
@@ -81,6 +83,18 @@ class Buildings extends React.Component {
           <ScrollView>
             <View style={styles.notifySection}>
               <NoticeBoard value={'buildings'} onChange={this.onChangeBoard} />
+            </View>
+            <View style={styles.bodySection}>
+              <SearchBox />
+            </View>
+            <View style={styles.bodySection}>
+              <Building />
+            </View>
+            <View style={styles.bodySection}>
+              <Building />
+            </View>
+            <View style={styles.bodySection}>
+              <Building />
             </View>
             <View style={styles.bodySection}>
               <Error />
