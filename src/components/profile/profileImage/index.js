@@ -8,6 +8,7 @@ const { height, width } = Dimensions.get('window');
 
 
 class ProfileImage extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {

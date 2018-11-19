@@ -33,10 +33,17 @@ class Menu extends React.Component {
 
     }
     this.onPressMenu = this.onPressMenu.bind(this);
+    this.clickMenuItem = this.clickMenuItem.bind(this);
   }
 
   onPressMenu() {
     this.props.navigation.goBack();
+  }
+
+  clickMenuItem(val) {
+    if (val == "feed") {
+      this.props.navigation.navigate('Feed');
+    }
   }
 
   render () {
@@ -90,6 +97,14 @@ class Menu extends React.Component {
               <Image style={styles.itemImage} source={require('../../assets/icons/message.png')}></Image>
               <Text style={styles.itemText}>Messages</Text>
             </View>
+          </View>
+          <View style={[styles.item, styles.borderBottomBox]}>
+            <TouchableOpacity onPress={() => { this.clickMenuItem('feed') }}>
+              <View style={styles.itemBox}>
+                <Image style={styles.itemImage} source={require('../../assets/icons/message.png')}></Image>
+                <Text style={styles.itemText}>Feed</Text>
+              </View>
+            </TouchableOpacity>
           </View>
           <View style={[styles.item, styles.borderBottomBox]}>
             <View style={styles.itemBox}>

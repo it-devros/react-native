@@ -29,6 +29,8 @@ import SavedPosts from './src/screens/savedPosts';
 
 import Funds from './src/screens/funds';
 
+import Feed from './src/screens/feed';
+
 
 
 const WelcomeStack = {
@@ -51,6 +53,7 @@ const MainStack = {
   Buildings: { screen: Buildings },
   SavedPosts: { screen: SavedPosts },
   Funds: { screen: Funds },
+  Feed: { screen: Feed },
 
   SideBar: { screen: SideBar },
   Menu: { screen: Menu }
