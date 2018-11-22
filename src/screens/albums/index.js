@@ -80,7 +80,7 @@ class Albums extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'albums'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'albums'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.profileImageSection}>
               <ProfileImage />

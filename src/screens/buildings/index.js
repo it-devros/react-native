@@ -82,7 +82,7 @@ class Buildings extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'buildings'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'buildings'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.bodySection}>
               <SearchBox />

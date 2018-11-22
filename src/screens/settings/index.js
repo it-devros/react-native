@@ -133,7 +133,7 @@ class Settings extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'settings'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'settings'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.subTabSection}>
               <SettingsTab onPressTab={this.onPressTab} />

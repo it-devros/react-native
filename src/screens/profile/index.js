@@ -87,7 +87,7 @@ class Profile extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'profile'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'profile'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.profileImageSection}>
               <ProfileImage />

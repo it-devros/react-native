@@ -30,6 +30,10 @@ import SavedPosts from './src/screens/savedPosts';
 import Funds from './src/screens/funds';
 
 import Feed from './src/screens/feed';
+import PostDetail from './src/screens/feed/detail';
+
+import Message from './src/screens/message';
+import PrivateChat from './src/screens/message/chat';
 
 
 
@@ -54,6 +58,9 @@ const MainStack = {
   SavedPosts: { screen: SavedPosts },
   Funds: { screen: Funds },
   Feed: { screen: Feed },
+  PostDetail: { screen: PostDetail },
+  Message: { screen: Message },
+  PrivateChat: { screen: PrivateChat },
 
   SideBar: { screen: SideBar },
   Menu: { screen: Menu }

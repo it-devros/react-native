@@ -82,7 +82,7 @@ class Inbox extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'inbox'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'inbox'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.messageSection}>
               <InboxMessage />

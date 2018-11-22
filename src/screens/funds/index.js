@@ -84,7 +84,7 @@ class Funds extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'dashboard'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'dashboard'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.mainSection}>
               <FundsPannel />

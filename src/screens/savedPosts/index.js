@@ -87,7 +87,7 @@ class SavedPosts extends React.Component {
         <View style={styles.container}>
           <ScrollView>
             <View style={styles.notifySection}>
-              <NoticeBoard value={'savedPosts'} onChange={this.onChangeBoard} />
+              {/* <NoticeBoard value={'savedPosts'} onChange={this.onChangeBoard} /> */}
             </View>
             <View style={styles.newPostSection}>
               <NewPost />
