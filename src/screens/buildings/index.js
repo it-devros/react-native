@@ -1,74 +1,74 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native';
-import { Button } from 'react-native-elements';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native'
+import { Button } from 'react-native-elements'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import Header from '../header';
-import NoticeBoard from '../../components/noticeBoard';
+import Header from '../header'
+import NoticeBoard from '../../components/noticeBoard'
 
-import SearchBox from '../../components/buildings/searchBox';
-import Building from '../../components/buildings/building';
-import Error from '../error';
+import SearchBox from '../../components/buildings/searchBox'
+import Building from '../../components/buildings/building'
+import Error from '../error'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
-	});
+  return ({
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
 
 class Buildings extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
-    this.onPressMenu = this.onPressMenu.bind(this);
-    this.onPressHome = this.onPressHome.bind(this);
-    this.onChangeBoard = this.onChangeBoard.bind(this);
+    this.onPressMenu = this.onPressMenu.bind(this)
+    this.onPressHome = this.onPressHome.bind(this)
+    this.onChangeBoard = this.onChangeBoard.bind(this)
   }
 
   onPressMenu() {
-    this.props.navigation.navigate('Menu');
+    this.props.navigation.navigate('Menu')
   }
 
   onPressHome() {
-    this.props.navigation.openDrawer();
+    this.props.navigation.openDrawer()
   }
 
   onChangeBoard(val) {
     if (val == 'profile') {
-      this.props.navigation.navigate('Profile');
+      this.props.navigation.navigate('Profile')
     }
     if (val == 'dashboard') {
-      this.props.navigation.navigate('Dashboard');
+      this.props.navigation.navigate('Dashboard')
     }
     if (val == 'inbox') {
-      this.props.navigation.navigate('Inbox');
+      this.props.navigation.navigate('Inbox')
     }
     if (val == 'settings') {
-      this.props.navigation.navigate('Settings');
+      this.props.navigation.navigate('Settings')
     }
     if (val == 'albums') {
-      this.props.navigation.navigate('Albums');
+      this.props.navigation.navigate('Albums')
     }
     if (val == 'buildings') {
-      this.props.navigation.navigate('Buildings');
+      this.props.navigation.navigate('Buildings')
     }
     if (val == 'savedPosts') {
-      this.props.navigation.navigate('SavedPosts');
+      this.props.navigation.navigate('SavedPosts')
     }
   }
 
@@ -102,7 +102,7 @@ class Buildings extends React.Component {
           </ScrollView>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -133,6 +133,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginBottom: 15,
   },
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Buildings);
+export default connect(mapStateToProps, mapDispatchToProps)(Buildings)

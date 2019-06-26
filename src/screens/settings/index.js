@@ -1,42 +1,42 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native';
-import { Button } from 'react-native-elements';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native'
+import { Button } from 'react-native-elements'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
-import Header from '../header';
-import NoticeBoard from '../../components/noticeBoard';
+import Header from '../header'
+import NoticeBoard from '../../components/noticeBoard'
 
-import SettingsTab from '../../components/settings/settingsTab';
-import SettingsWindow from '../../components/settings/settings';
-import ChangePassword from '../../components/settings/changePassword';
-import PrivacySettings from '../../components/settings/privacySettings';
-import SocialNetworks from '../../components/settings/socialNetworks';
-import FriendRequests from '../../components/settings/friendRequests';
-import BuildingInvites from '../../components/settings/buildingInvites';
-import BecomeVerified from '../../components/settings/becomeVerified';
+import SettingsTab from '../../components/settings/settingsTab'
+import SettingsWindow from '../../components/settings/settings'
+import ChangePassword from '../../components/settings/changePassword'
+import PrivacySettings from '../../components/settings/privacySettings'
+import SocialNetworks from '../../components/settings/socialNetworks'
+import FriendRequests from '../../components/settings/friendRequests'
+import BuildingInvites from '../../components/settings/buildingInvites'
+import BecomeVerified from '../../components/settings/becomeVerified'
 
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
-	});
+  return ({
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
 
 class Settings extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       is_settings: true,
       is_changePassword: false,
@@ -46,11 +46,11 @@ class Settings extends React.Component {
       is_buildingInvites: false,
       is_becomeVerified: false,
     }
-    this.onPressMenu = this.onPressMenu.bind(this);
-    this.onPressHome = this.onPressHome.bind(this);
-    this.onChangeBoard = this.onChangeBoard.bind(this);
-    this.onPressTab = this.onPressTab.bind(this);
-    this.initStates = this.initStates.bind(this);
+    this.onPressMenu = this.onPressMenu.bind(this)
+    this.onPressHome = this.onPressHome.bind(this)
+    this.onChangeBoard = this.onChangeBoard.bind(this)
+    this.onPressTab = this.onPressTab.bind(this)
+    this.initStates = this.initStates.bind(this)
   }
 
   initStates() {
@@ -62,63 +62,63 @@ class Settings extends React.Component {
       is_friendRequests: false,
       is_buildingInvites: false,
       is_becomeVerified: false,
-    });
+    })
   }
 
   onPressMenu() {
-    this.props.navigation.navigate('Menu');
+    this.props.navigation.navigate('Menu')
   }
 
   onPressHome() {
-    this.props.navigation.openDrawer();
+    this.props.navigation.openDrawer()
   }
 
   onChangeBoard(val) {
     if (val == 'profile') {
-      this.props.navigation.navigate('Profile');
+      this.props.navigation.navigate('Profile')
     }
     if (val == 'dashboard') {
-      this.props.navigation.navigate('Dashboard');
+      this.props.navigation.navigate('Dashboard')
     }
     if (val == 'inbox') {
-      this.props.navigation.navigate('Inbox');
+      this.props.navigation.navigate('Inbox')
     }
     if (val == 'settings') {
-      this.props.navigation.navigate('Settings');
+      this.props.navigation.navigate('Settings')
     }
     if (val == 'albums') {
-      this.props.navigation.navigate('Albums');
+      this.props.navigation.navigate('Albums')
     }
     if (val == 'buildings') {
-      this.props.navigation.navigate('Buildings');
+      this.props.navigation.navigate('Buildings')
     }
     if (val == 'savedPosts') {
-      this.props.navigation.navigate('SavedPosts');
+      this.props.navigation.navigate('SavedPosts')
     }
   }
 
   onPressTab(val) {
-    this.initStates();
+    this.initStates()
     if (val == 'settings') {
-      this.setState({ is_settings: true });
+      this.setState({ is_settings: true })
     }
     if (val == 'changePassword') {
-      this.setState({ is_changePassword: true });
+      this.setState({ is_changePassword: true })
     }
     if (val == 'privacySettings') {
-      this.setState({ is_privacySettings: true });
+      this.setState({ is_privacySettings: true })
     }
     if (val == 'socialNetworks') {
-      this.setState({ is_socialNetworks: true });
+      this.setState({ is_socialNetworks: true })
     }
     if (val == 'friendRequests') {
-      this.setState({ is_friendRequests: true });
+      this.setState({ is_friendRequests: true })
     }
     if (val == 'buildingInvites') {
-      this.setState({ is_buildingInvites: true });
+      this.setState({ is_buildingInvites: true })
     }
     if (val == 'becomeVerified') {
-      this.setState({ is_becomeVerified: true });
+      this.setState({ is_becomeVerified: true })
     }
   }
 
@@ -183,7 +183,7 @@ class Settings extends React.Component {
           </ScrollView>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -219,6 +219,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginBottom: 30,
   }
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Settings);
+export default connect(mapStateToProps, mapDispatchToProps)(Settings)

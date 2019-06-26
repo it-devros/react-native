@@ -1,51 +1,51 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation'
 
-import Menu from './src/screens/menu';
-import SideMenu from './src/screens/sideMenu';
-import SideBar from './src/screens/sidebar';
+import Menu from './src/screens/menu'
+import SideMenu from './src/screens/sideMenu'
+import SideBar from './src/screens/sidebar'
 
-import Login from './src/screens/auth/login';
-import SignUp from './src/screens/auth/signup';
-import WelcomeNew from './src/screens/auth/welcomeNew';
+import Login from './src/screens/auth/login'
+import SignUp from './src/screens/auth/signup'
+import WelcomeNew from './src/screens/auth/welcomeNew'
 
-import Welcome from './src/screens/welcome';
+import Welcome from './src/screens/welcome'
 
-import Dashboard from './src/screens/dashboard';
+import Dashboard from './src/screens/dashboard'
 
-import Profile from './src/screens/profile';
+import Profile from './src/screens/profile'
 
-import Inbox from './src/screens/inbox';
+import Inbox from './src/screens/inbox'
 
-import Settings from './src/screens/settings';
+import Settings from './src/screens/settings'
 
-import Albums from './src/screens/albums';
+import Albums from './src/screens/albums'
 
-import Buildings from './src/screens/buildings';
+import Buildings from './src/screens/buildings'
 
-import SavedPosts from './src/screens/savedPosts';
+import SavedPosts from './src/screens/savedPosts'
 
-import Funds from './src/screens/funds';
+import Funds from './src/screens/funds'
 
-import Feed from './src/screens/feed';
-import PostDetail from './src/screens/feed/detail';
+import Feed from './src/screens/feed'
+import PostDetail from './src/screens/feed/detail'
 
-import Message from './src/screens/message';
-import PrivateChat from './src/screens/message/chat';
+import Message from './src/screens/message'
+import PrivateChat from './src/screens/message/chat'
 
 
 
 const WelcomeStack = {
   Welcome: { screen: Welcome }
-};
+}
 
 const AuthStack = {
   Login: { screen: Login },
   SignUp: { screen: SignUp },
   WelcomeNew: { screen: WelcomeNew }
-};
+}
 
 
 const MainStack = {
@@ -64,13 +64,13 @@ const MainStack = {
 
   SideBar: { screen: SideBar },
   Menu: { screen: Menu }
-};
+}
 
 
 const DrawerStack = createDrawerNavigator(MainStack, {
   drawerWidth: 300,
   contentComponent: SideMenu
-});
+})
 
 const AppNavigator = createStackNavigator({
   ...WelcomeStack,
@@ -82,22 +82,22 @@ const AppNavigator = createStackNavigator({
 }, {
     mode: 'modal',
     headerMode: 'none',
-});
+})
 
 
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
-	});
+  return ({
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     is_authed: state.user.is_authed,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
@@ -105,7 +105,7 @@ const mapStateToProps = (state) => {
 
 class Router extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
@@ -114,11 +114,11 @@ class Router extends React.Component {
   render() {
     return (
       <AppNavigator />
-    );
+    )
   }
 
 }
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Router);
+export default connect(mapStateToProps, mapDispatchToProps)(Router)

@@ -1,15 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native';
-import Svg,{ Path } from 'react-native-svg';
-import { Button, CheckBox } from 'react-native-elements';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native'
+import Svg,{ Path } from 'react-native-svg'
+import { Button, CheckBox } from 'react-native-elements'
 
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 class FriendRequests extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       text: ''
     }
@@ -38,7 +38,7 @@ class FriendRequests extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500'    
   }
-});
+})
 
-export default FriendRequests;
+export default FriendRequests

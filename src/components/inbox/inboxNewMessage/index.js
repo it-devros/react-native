@@ -1,25 +1,25 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native';
-import Svg,{ Path } from 'react-native-svg';
-import { Button } from 'react-native-elements';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native'
+import Svg,{ Path } from 'react-native-svg'
+import { Button } from 'react-native-elements'
 
-// import {RichTextEditor, RichTextToolbar} from 'react-native-zss-rich-text-editor';
-// import {WebViewQuillEditor, WebViewQuillViewer} from 'react-native-webview-quilljs';
+// import {RichTextEditor, RichTextToolbar} from 'react-native-zss-rich-text-editor'
+// import {WebViewQuillEditor, WebViewQuillViewer} from 'react-native-webview-quilljs'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 class InboxNewMessage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       text: ''
     }
-    this.changeText = this.changeText.bind(this);
+    this.changeText = this.changeText.bind(this)
   }
 
   changeText(val) {
-    this.setState({ text: val });
+    this.setState({ text: val })
   }
 
   render () {
@@ -55,7 +55,7 @@ class InboxNewMessage extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -113,6 +113,6 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: '#0074ff'
   }
-});
+})
 
-export default InboxNewMessage;
+export default InboxNewMessage

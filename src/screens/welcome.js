@@ -1,39 +1,39 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { Button } from 'react-native-elements';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { Button } from 'react-native-elements'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
-	});
+  return ({
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
 
 class Welcome extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
-    this.onPressLoginBtn = this.onPressLoginBtn.bind(this);
+    this.onPressLoginBtn = this.onPressLoginBtn.bind(this)
   }
 
   onPressLoginBtn() {
-    this.props.navigation.navigate('Login');
+    this.props.navigation.navigate('Login')
   }
 
   render () {
@@ -55,7 +55,7 @@ class Welcome extends React.Component {
           </View>
         </View>
       </ImageBackground>
-    );
+    )
 
   }
 }
@@ -116,6 +116,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: 'rgba(255, 94, 58, 0.01)'
   },
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome)

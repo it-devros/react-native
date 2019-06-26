@@ -1,15 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native';
-import Svg,{ Path } from 'react-native-svg';
-import { Button } from 'react-native-elements';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native'
+import Svg,{ Path } from 'react-native-svg'
+import { Button } from 'react-native-elements'
 
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 class InboxMessage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       text: ''
     }
@@ -38,7 +38,7 @@ class InboxMessage extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -100,6 +100,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 50,
   }
-});
+})
 
-export default InboxMessage;
+export default InboxMessage

@@ -1,51 +1,51 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { Button } from 'react-native-elements';
-import Svg,{ Path } from 'react-native-svg';
-import IconBadge from 'react-native-icon-badge';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { Button } from 'react-native-elements'
+import Svg,{ Path } from 'react-native-svg'
+import IconBadge from 'react-native-icon-badge'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import Header from './header';
+import Header from './header'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
-	});
+  return ({
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
 
 class Menu extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
-    this.onPressMenu = this.onPressMenu.bind(this);
-    this.clickMenuItem = this.clickMenuItem.bind(this);
+    this.onPressMenu = this.onPressMenu.bind(this)
+    this.clickMenuItem = this.clickMenuItem.bind(this)
   }
 
   onPressMenu() {
-    this.props.navigation.goBack();
+    this.props.navigation.goBack()
   }
 
   clickMenuItem(val) {
     if (val == "feed") {
-      this.props.navigation.navigate('Feed');
+      this.props.navigation.navigate('Feed')
     }
     if (val == "Message") {
-      this.props.navigation.navigate('Message');
+      this.props.navigation.navigate('Message')
     }
   }
 
@@ -136,7 +136,7 @@ class Menu extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -213,6 +213,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   }
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu)

@@ -1,13 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native';
-import Svg,{ Path } from 'react-native-svg';
-import { Button } from 'react-native-elements';
-const { height, width } = Dimensions.get('window');
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native'
+import Svg,{ Path } from 'react-native-svg'
+import { Button } from 'react-native-elements'
+const { height, width } = Dimensions.get('window')
 
 
 class Post extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       text: ''
     }
@@ -70,7 +70,7 @@ class Post extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -150,6 +150,6 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 5,
   }
-});
+})
 
-export default Post;
+export default Post

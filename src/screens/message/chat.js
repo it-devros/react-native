@@ -1,26 +1,26 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Button } from 'react-native-elements';
-import Svg,{ Path } from 'react-native-svg';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { Button } from 'react-native-elements'
+import Svg,{ Path } from 'react-native-svg'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import * as commonActions from '../../actions/common';
+import * as commonActions from '../../actions/common'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
+  return ({
     commonActions: bindActionCreators({...commonActions}, dispatch)
-	});
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 
 class PrivateChat extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
@@ -122,7 +122,7 @@ class PrivateChat extends React.Component {
         </View>
       
       </View>
-    );
+    )
 
   }
 }
@@ -291,6 +291,6 @@ const styles = StyleSheet.create({
     padding: 5,
     borderWidth: 0
   }
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(PrivateChat);
+export default connect(mapStateToProps, mapDispatchToProps)(PrivateChat)

@@ -1,5 +1,5 @@
 
-import { USER } from '../config/types';
+import { USER } from '../config/types'
 
 const initState = {
   is_authed: false,
@@ -8,7 +8,7 @@ const initState = {
 
 
 const user = (state = initState, action) => {
-  const { type, payload} = action;
+  const { type, payload} = action
   
   switch(type){
     case USER.AUTH:
@@ -26,8 +26,8 @@ const user = (state = initState, action) => {
       }
 
     default:
-        return state;
+        return state
   }
-};
+}
 
-export default user;
+export default user

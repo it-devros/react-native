@@ -1,13 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
-import Svg,{ Path } from 'react-native-svg';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native'
+import Svg,{ Path } from 'react-native-svg'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 class Vacancies extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
@@ -69,7 +69,7 @@ class Vacancies extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -149,6 +149,6 @@ const styles = StyleSheet.create({
     color: '#0074ff',
     textAlign: 'center'
   }
-});
+})
 
-export default Vacancies;
+export default Vacancies

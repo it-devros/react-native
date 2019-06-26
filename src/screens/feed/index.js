@@ -1,28 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Button } from 'react-native-elements';
-import Svg,{ Path } from 'react-native-svg';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { Button } from 'react-native-elements'
+import Svg,{ Path } from 'react-native-svg'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import * as commonActions from '../../actions/common';
+import * as commonActions from '../../actions/common'
 
-import Header from '../header';
+import Header from '../header'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
+  return ({
     commonActions: bindActionCreators({...commonActions}, dispatch)
-	});
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
@@ -30,20 +30,20 @@ const mapStateToProps = (state) => {
 
 class Feed extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
-    this.onPressHome = this.onPressHome.bind(this);
-    this.onPressDetail = this.onPressDetail.bind(this);
+    this.onPressHome = this.onPressHome.bind(this)
+    this.onPressDetail = this.onPressDetail.bind(this)
   }
 
   onPressHome() {
-    this.props.navigation.openDrawer();
+    this.props.navigation.openDrawer()
   }
 
   onPressDetail() {
-    this.props.navigation.navigate('PostDetail');
+    this.props.navigation.navigate('PostDetail')
   }
 
 
@@ -127,7 +127,7 @@ class Feed extends React.Component {
           </ScrollView>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -254,6 +254,6 @@ const styles = StyleSheet.create({
     marginRight: 5,
     color: '#ccc'
   },
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps, mapDispatchToProps)(Feed)

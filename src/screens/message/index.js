@@ -1,28 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Button } from 'react-native-elements';
-import Svg,{ Path } from 'react-native-svg';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, ScrollView, KeyboardAvoidingView } from 'react-native'
+import { Button } from 'react-native-elements'
+import Svg,{ Path } from 'react-native-svg'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import * as commonActions from '../../actions/common';
+import * as commonActions from '../../actions/common'
 
-import Header from '../header';
+import Header from '../header'
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 const mapDispatchToProps = (dispatch) => {
-	return ({
+  return ({
     commonActions: bindActionCreators({...commonActions}, dispatch)
-	});
+  })
 }
 
 const mapStateToProps = (state) => {
-	return ({
+  return ({
     authedUser: state.user.authedUser,
     loading: state.common.loading,
     label: state.common.label,
-	});
+  })
 }
 
 
@@ -30,20 +30,20 @@ const mapStateToProps = (state) => {
 
 class Message extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
-    this.onPressHome = this.onPressHome.bind(this);
-    this.onPressItem = this.onPressItem.bind(this);
+    this.onPressHome = this.onPressHome.bind(this)
+    this.onPressItem = this.onPressItem.bind(this)
   }
 
   onPressHome() {
-    this.props.navigation.openDrawer();
+    this.props.navigation.openDrawer()
   }
 
   onPressItem() {
-    this.props.navigation.navigate('PrivateChat');
+    this.props.navigation.navigate('PrivateChat')
   }
 
   render () {
@@ -149,7 +149,7 @@ class Message extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -255,6 +255,6 @@ const styles = StyleSheet.create({
     bottom: 35,
     left: width / 2 - 25
   }
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Message);
+export default connect(mapStateToProps, mapDispatchToProps)(Message)

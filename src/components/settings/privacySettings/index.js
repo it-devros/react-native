@@ -1,15 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native';
-import Svg,{ Path } from 'react-native-svg';
-import { Button, CheckBox } from 'react-native-elements';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker, KeyboardAvoidingView } from 'react-native'
+import Svg,{ Path } from 'react-native-svg'
+import { Button, CheckBox } from 'react-native-elements'
 
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 class PrivacySettings extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       text: ''
     }
@@ -84,7 +84,7 @@ class PrivacySettings extends React.Component {
           </View>
         </View>
       </View>
-    );
+    )
 
   }
 }
@@ -140,6 +140,6 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: '#0074ff'
   }
-});
+})
 
-export default PrivacySettings;
+export default PrivacySettings

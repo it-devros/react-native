@@ -1,13 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TextInput, Image, TouchableOpacity, Dimensions, TouchableWithoutFeedback, Keyboard, Picker } from 'react-native'
 
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window')
 
 
 class NoticeBoard extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       
     }
@@ -27,7 +27,7 @@ class NoticeBoard extends React.Component {
           <Picker.Item label="Saved Posts" value="savedPosts" />
         </Picker>
       </View>
-    );
+    )
 
   }
 }
@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
     borderColor: '#000',
     borderRadius: 5,
   }
-});
+})
 
-export default NoticeBoard;
+export default NoticeBoard

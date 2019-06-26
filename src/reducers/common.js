@@ -1,5 +1,5 @@
 
-import { COMMON } from '../config/types';
+import { COMMON } from '../config/types'
 
 const initState = {
   loading: false,
@@ -8,7 +8,7 @@ const initState = {
 
 
 const common = (state = initState, action) => {
-  const { type, payload} = action;
+  const { type, payload} = action
   
   switch(type){
     case COMMON.SERVER_REQUEST:
@@ -26,8 +26,8 @@ const common = (state = initState, action) => {
       }
 
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default common;
+export default common
